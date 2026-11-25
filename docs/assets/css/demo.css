@@ -1,0 +1,29 @@
+/* Bandeau de la démo en ligne */
+.demo-banner {
+    margin: 0;
+    padding: 10px 16px;
+    background-color: #077c4f;
+    color: white;
+    font-family: "catcafe", sans-serif;
+    font-size: 18px;
+    text-align: center;
+}
+
+.demo-banner a {
+    color: white;
+    font-weight: bold;
+}
+
+/* Petits écrans */
+@media (max-width: 700px) {
+    table th,
+    table td {
+        padding: 10px 6px;
+        font-size: 16px;
+    }
+
+    .modal {
+        width: calc(100vw - 40px);
+        box-sizing: border-box;
+    }
+}

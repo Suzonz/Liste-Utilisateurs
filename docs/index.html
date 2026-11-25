@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/demo.css">
+    <title>Tableau utilisateurs - démo</title>
+</head>
+
+<body>
+    <!--
+        Démo en ligne (GitHub Pages) : la même page que index.php, mais tout se passe
+        dans le navigateur. Les utilisateurs ajoutés restent dans le stockage de session
+        de l'onglet et disparaissent à sa fermeture : rien n'est envoyé à un serveur.
+        La vraie version, en PHP avec MySQL, est à la racine du dépôt (index.php, db.php).
+    -->
+    <p class="demo-banner">
+        Démo : ce que vous ajoutez reste dans cet onglet et disparaît à sa fermeture, rien n'est envoyé à un serveur.
+        <a href="https://github.com/Suzonz/Liste-Utilisateurs">Voir la version PHP / MySQL</a>
+    </p>
+    <header>
+        <h1>Gestion des utilisateurs</h1>
+    </header>
+    <main>
+        <div class="form-container">
+            <h2>Ajouter un nouvel utilisateur</h2>
+            <form id="add-form">
+                <input type="text" name="pseudo" placeholder="Pseudo" />
+                <input type="email" name="email" placeholder="Votre email" />
+                <input type="password" name="password" placeholder="Mot de passe" />
+                <input type="file" name="avatar" accept="image/*" />
+                <button type="submit">Inscription</button>
+            </form>
+        </div>
+        <div class="user-list">
+            <h2>Liste des utilisateurs</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th class="border">Avatar</th>
+                        <th class="border">Pseudo</th>
+                        <th class="border">Email</th>
+                        <th class="border">Action</th>
+                    </tr>
+                </thead>
+                <tbody id="users"></tbody>
+            </table>
+        </div>
+        <p id="error" style="color:red;"></p>
+    </main>
+
+    <template id="edit-modal">
+        <div class="overlay">
+            <div class="modal">
+                <h2>Modification</h2>
+                <form id="edit-form">
+                    <input type="text" name="editPseudo">
+                    <input type="email" name="editEmail">
+                    <input type="password" name="editPassword" placeholder="Nouveau mot de passe (laisser vide pour ne pas changer)">
+                    <input type="file" name="editAvatar" accept="image/*" />
+                    <p class="modal-error" style="color:red; width:100%; margin:0;"></p>
+                    <div class="modal-buttons">
+                        <button type="submit">Modifier</button>
+                        <button type="button" data-close>Fermer</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </template>
+
+    <footer>
+    </footer>
+    <script src="./assets/js/demo.js"></script>
+</body>
+
+</html>
