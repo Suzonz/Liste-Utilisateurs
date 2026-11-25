@@ -1,2 +1,4 @@
 # Avatars envoyés par les visiteurs (créé automatiquement par db.php)
-uploads/
+# seul le .htaccess, qui protège le dossier, est versionné
+uploads/*
+!uploads/.htaccess

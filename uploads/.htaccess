@@ -1,0 +1,5 @@
+# Dossier des avatars : seulement des images, aucun script ne peut y être exécuté
+<FilesMatch "(?i)\.(php\d?|phtml|phar|pl|py|cgi|sh)$">
+    Require all denied
+</FilesMatch>
+Options -ExecCGI -Indexes
